@@ -1,9 +1,22 @@
 from pydantic import BaseModel
 
-class Item(BaseModel):
+class TodoItem(BaseModel):
     item: str
-    status: str
-
+    class Config:
+        schema_extra = {
+            "example": {
+                "item": "Read the next chapter of the book"
+            }
+        }
 class Todo(BaseModel):
     id: int
     item: str
+    class Config:
+        Schema_extra = {
+            "Example": {
+                "id": 1,
+                "item": "Example schema!"
+            }
+        }
+
+        
