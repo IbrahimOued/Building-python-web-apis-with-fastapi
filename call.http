@@ -1,0 +1,35 @@
+# POST http://localhost:8080/event/new HTTP/1.1
+# content-type: application/json
+
+# {
+#     "title": "FastAPI Book Launch",
+#     "image": "fastapi-book.jpeg",
+#     "description": "We will be discussing the contents of the FastAPI book in this event. Ensure to come with your own copy to win gifts!",
+#     "tags": [
+#         "python",
+#         "fastapi",
+#         "book",
+#         "launch"
+#     ],
+#     "location": "Google Meet"
+# }
+
+PUT http://localhost:8080/event/edit/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "FastAPI Book Launch ",
+    "image": "fastapi-book.jpeg",
+    "description": "We will be discussing the contents of the FastAPI book in this event. Ensure to come with your own copy to win gifts!",
+    "tags": [
+        "python",
+        "fastapi",
+        "book",
+        "launch"
+    ],
+    "location": "Google Meet"
+}
+
+DELETE http://localhost:8080/event/ HTTP/1.1
+
+# GET http://localhost:8080/event/ HTTP/1.1
