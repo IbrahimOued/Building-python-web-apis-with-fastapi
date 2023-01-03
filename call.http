@@ -1,0 +1,22 @@
+POST http://localhost:8080/user/signup HTTP/1.1
+
+{
+    "email": "reader@gmail.com",
+    "password": "exemplary"
+}
+
+# POST http://localhost:8080/event/new HTTP/1.1
+# content-type: application/json
+# {
+#     "title": "Flask Book Launch",
+#     "image": "https://linktomyimage.com/image.png",
+#     "description": "We will be discussing the contents of the Flask book in this event. Ensure to come with your own copy to win gifts!",
+#     "tags": [
+#         "python",
+#         "flask",
+#         "book",
+#         "launch",
+#         "api"
+#     ],
+#     "location": "Zoom calling"
+# }
