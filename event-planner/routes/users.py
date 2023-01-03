@@ -1,6 +1,10 @@
 from database.connection import Database
+from auth.hash_password import HashPassword
+from database.connection import Database
 from fastapi import APIRouter, HTTPException, status
 from models.users import User, UserSignIn
+user_database = Database(User)
+hash_password = HashPassword()
 
 user_router = APIRouter(
     tags=["User"]
@@ -18,6 +22,8 @@ async def sign_user_up(user: User) -> dict:
             status_code=status.HTTP_409_CONFLICT,
             detail="User with email provided exists already."
         )
+    hashed_password = hash_password.create_hash(user.password)
+    user.password=hashed_password
     await user_database.save(user)
     return {
         "message": "User created successfully"
