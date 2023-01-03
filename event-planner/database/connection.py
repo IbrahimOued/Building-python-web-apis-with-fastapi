@@ -27,8 +27,7 @@ class Database:
     async def update(self, id: PydanticObjectId, body: BaseModel) -> Any:
         doc_id = id
         des_body = body.dict()
-        des_body = {k:v for k,v in des_body.items() if v is 
-        not None}
+        des_body = {k:v for k,v in des_body.items() if v is not None}
         update_query = {"$set": {
             field: value for field, value in 
             des_body.items()
@@ -49,9 +48,9 @@ class Database:
 class Settings(BaseSettings):
     SECRET_KEY: Optional[str] = None
     DATABASE_URL: Optional[str] = None
+
     async def initialize_database(self):
-        client = AsyncIOMotorClient(self.DATABASE_URL)
-        await init_beanie(
-        database=client.get_default_database(), document_models=[Event, User])
+        client = AsyncIOMotorClient("mongodb://localhost:27017/planner")
+        await init_beanie(database=client.get_default_database(), document_models=[Event, User])
     class Config:
         env_file = ".env"
