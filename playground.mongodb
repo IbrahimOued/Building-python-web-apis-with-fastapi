@@ -40,3 +40,5 @@ use(database);
 // https://www.mongodb.com/docs/manual/reference/method/db.createCollection/
 
 // db.users.find({})
+
+db.users.deleteOne( {"_id": ObjectId("63b5e439f474faa03dfc5aa6")});
