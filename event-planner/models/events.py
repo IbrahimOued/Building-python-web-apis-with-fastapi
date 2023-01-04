@@ -3,6 +3,7 @@ from typing import Optional, List
 from pydantic import BaseModel
 
 class Event(Document):
+    creator: Optional[str]
     title: str
     image: str
     description: str
