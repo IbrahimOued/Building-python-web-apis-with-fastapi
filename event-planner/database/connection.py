@@ -50,7 +50,8 @@ class Settings(BaseSettings):
     DATABASE_URL: Optional[str] = None
 
     async def initialize_database(self):
+        # client = AsyncIOMotorClient(self.DATABASE_URL)
         client = AsyncIOMotorClient("mongodb://localhost:27017/planner")
-        await init_beanie(database=client.get_default_database(), document_models=[Event, User])
+        await init_beanie(database=client.get_default_database(), document_models=[Event, User]) 
     class Config:
         env_file = ".env"
