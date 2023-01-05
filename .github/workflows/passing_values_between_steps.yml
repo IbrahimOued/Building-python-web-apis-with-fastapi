@@ -1,6 +1,7 @@
 name: Passing values between steps
 
-on: workflow_dispatch
+on:
+  workflow_dispatch
 
 jobs:
   passing-values-by-steps:
@@ -15,11 +16,11 @@ jobs:
         run: |
           echo "Performing a random task"
           echo "::set-output name=var1_name::TechSchool"
-          echo "::set-output name=var2_date::$(data + '%Y-%m-%d-%H-%M'"
+          echo "::set-output name=var2_date::$(date + '%Y-%m-%d-%H-%M')"
       
       - name: Get variable value
         run: |
           echo "Printing the values"
-          echo variableName: ${{ env.variableName}}
-          echo var1_name: ${{ steps.var_source_step.outputs.var1_name}}
-          echo var2_data: ${{ steps.var_source_step.outputs.var2_date}}
+          echo variableName: ${{ env.variableName }}
+          echo var1_name: ${{ steps.var_source_step.outputs.var1_name }}
+          echo var2_date: ${{ steps.var_source_step.outputs.var2_date }}
