@@ -24,5 +24,5 @@ jobs:
     steps:
       - run: |
           echo "Printing values"
-          echo output1 : ${{needs.job1.outputs.output1}}"
-          echo output2 : ${{needs.job1.outputs.output2}}"
+          echo "output1 : ${{needs.job1.outputs.output1}}"
+          echo "output2 : ${{needs.job1.outputs.output2}}"
