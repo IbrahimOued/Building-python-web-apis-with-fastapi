@@ -5,7 +5,7 @@ on:
 
 jobs:
   custom_github_env:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Set the value
       id: step_one
