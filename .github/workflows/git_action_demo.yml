@@ -52,7 +52,7 @@ jobs:
 
 
   package:
-    needs: [build-app, build-api]
+    needs: [build, build-api]
     runs-on: macos-latest
     steps:
       - run: echo "Hello world"
