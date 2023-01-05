@@ -45,7 +45,7 @@ jobs:
 
 
   build-db:
-    needs: build-app
+    needs: build
     runs-on: windows-latest
     steps:
       - run: echo "Hello windows"
