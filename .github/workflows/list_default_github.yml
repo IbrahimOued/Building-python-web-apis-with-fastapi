@@ -17,4 +17,4 @@ jobs:
   macos-environment-variables:
     runs-on: macos-latest
     steps:
-      - run: env 
+      - run: env
