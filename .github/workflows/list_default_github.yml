@@ -1,0 +1,20 @@
+name: List all default Github vars
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  ubuntu-environment-variables:
+    runs-on: ubuntu-latest
+    steps:
+      - run: env
+
+  windows-environment-variables:
+    runs-on: windows-latest
+    steps:
+      - run: env
+
+  macos-environment-variables:
+    runs-on: macos-latest
+    steps:
+      - run: env 
